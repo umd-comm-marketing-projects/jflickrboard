@@ -4,6 +4,11 @@ jFlickrBoard
 jFlickrBoard is a jQuery plugin that retrieves JSON feeds from Flickr and
 builds a "flier board" out of the images.
 
+![screenshot 1](img/screenshot-1.png)
+
+![screenshot 2](img/screenshot-2.png)
+
+
 Be aware that the development code -> production code filenames are deceiving. While 
 `jflickrboard.jquery.js` only contains the jflickrboard plugin code, `jflickrboard.jquery.min.js`
 has minified versions of fancybox, rotate.js, and jflickrboard rolled into one file. The
@@ -62,9 +67,9 @@ flickr:     object, controls API call properties
 
 ## References / Resources
 
--Flickr API documentation. The mother of all resources: <http://www.flickr.com/services/api/>
--Image URLs and params: <http://www.flickr.com/services/api/misc.urls.html>
--jFlickrFeed, a very simple, but powerful jQuery Plugin. Watch out for old API code: <http://www.gethifi.com/blog/a-jquery-flickr-feed-plugin>
+- Flickr API documentation. The mother of all resources: <http://www.flickr.com/services/api/>
+- Image URLs and params: <http://www.flickr.com/services/api/misc.urls.html>
+- jFlickrFeed, a very simple, but powerful jQuery Plugin. Watch out for old API code: <http://www.gethifi.com/blog/a-jquery-flickr-feed-plugin>
 
 
 ## Notes / Terms
