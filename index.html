@@ -1,0 +1,57 @@
+<!doctype html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ --> 
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+
+  <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame 
+       Remove this if you use the .htaccess -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title>jFlickrBoard - A Flickr Powered Digital Filer Board</title>
+  <meta name="description" content="a jQuery plugin for importing photos from a flickr stream and displaying them on a flier-like board">
+  <meta name="author" content="Kyle Smith">
+
+  <!-- CSS : implied media="all" -->
+  <link rel="stylesheet" href="css/jflickrboard.min.css">
+
+</head>
+<body>
+
+   <ul class="jFlickrBoard"></ul>
+
+   <!-- Javascript at the bottom for fast page loading -->
+   <!-- Grab Google CDN's jQuery. fall back to local if necessary -->
+   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+   <script>window.jQuery || document.write("<script src='js/jquery-1.5.2.min.js'>\x3C/script>")</script>
+   <!-- <script src="js/rotate.jquery.js"></script> -->
+   <!-- <script src="js/fancybox.jquery.js"></script> -->
+   <script src="js/jflickrboard.jquery.min.js"></script>
+   <script>
+      $(document).ready(function() {
+         $('.jFlickrBoard').jflickrboard({limit:4},
+         null, function() {
+            $(this).find('.wrapper a').attr('rel','fliers')
+            .each(function(i,photo) {
+               $(this).fancybox
+               ({
+                  title: $.data(photo, 'desc'),
+                  titlePosition: 'over',
+                  onComplete : function() {
+                     // Fancybox hack to adjust title overlay position
+                     var f = 
+                     $("#fancybox-title")
+                     .css('bottom', '160px');
+                  }
+               }) // end fancybox
+            }); // end each
+         }); // end jflickrboard
+      }); // end ready
+   </script>
+</body>
+</html>
+
